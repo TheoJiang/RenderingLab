@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:Button class="quicktool-button">
+        <ui:VisualElement name="VisualElement" class="quicktool-button-icon" />
+    </ui:Button>
+</ui:UXML>

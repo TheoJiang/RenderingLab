@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!200 &20000000
+ShaderVariantCollection:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SVColllector_NormalShader
+  m_Shaders:
+  - first: {fileID: 4800000, guid: d61680e6dc9845b4cad022b00dedce80, type: 3}
+    second:
+      variants:
+      - keywords: FOG_LINEAR
+        passType: 0
+      - keywords: KEY1 KEY2 KEY3 KEY4 KEY5 KEY6 KEY7
+        passType: 0
+      - keywords: KEY1 KEY2 KEY3 KEY4 KEY5 KEY6 KEY8
+        passType: 0
+      - keywords: KEY1 KEY10
+        passType: 0
+      - keywords: KEY1 KEY12
+        passType: 0

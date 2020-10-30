@@ -11,8 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: e40ac140fbb35db4d89989b06ed70b6d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -87,7 +87,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _WindSpeed: 1.5
+    - _WindSpeed: 3.15
     - _WindStrength: 0.12
     - _WindTintStrength: 1
     - _WindWaveDensity: 4.294952

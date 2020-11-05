@@ -76,7 +76,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GrassPeakColorFactor: 0.55
+    - _GrassPeakColorFactor: 0.635
     - _GroundPeakColorFactor1: 0.501
     - _Metallic: 0
     - _OcclusionStrength: 1

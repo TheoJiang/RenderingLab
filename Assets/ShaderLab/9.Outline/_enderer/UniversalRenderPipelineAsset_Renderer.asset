@@ -40,7 +40,7 @@ MonoBehaviour:
     Event: 200
     layerMask:
       serializedVersion: 2
-      m_Bits: 1536
+      m_Bits: 1024
     material: {fileID: 2100000, guid: 4e8cff4d034445a4c8ad3fab5c9dabfc, type: 2}
     passName: Mask3
     cmdName: Mask PrePass
@@ -60,10 +60,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RendererFeatures:
   - {fileID: 7232356105474976867}
+  - {fileID: 8613663073991078984}
   - {fileID: 7197371340279850}
   - {fileID: -1028568673627093214}
   - {fileID: 3857924748756353534}
-  m_RendererFeatureMap: 63acf62b8f7d5e642ad00d9af891190022c75cad3dcab9f1fe81cf6b1e1a8a35
+  m_RendererFeatureMap: 63acf62b8f7d5e64483423bcede089772ad00d9af891190022c75cad3dcab9f1fe81cf6b1e1a8a35
   postProcessData: {fileID: 11400000, guid: 2e07f17241f9f42a7b25f7317e76eb15, type: 2}
   shaders:
     blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
@@ -119,7 +120,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c9ac04d7f2ab41b6b1fce9c0f075d9d, type: 3}
-  m_Name: PPBlit
+  m_Name: CustomPPBlit
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
@@ -159,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
   m_Name: Mask1
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     passTag: Mask1
     Event: 300
@@ -185,5 +186,45 @@ MonoBehaviour:
     cameraSettings:
       overrideCamera: 0
       restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
+--- !u!114 &8613663073991078984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244a3621eac2d094ab3835798ff0b62f, type: 3}
+  m_Name: NewPPMaskFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  settings:
+    passTag: CustomMaskFeature
+    Event: 300
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 1536
+      PassNames:
+      - UniversalForward
+    overrideMaterial: {fileID: 2100000, guid: 4e8cff4d034445a4c8ad3fab5c9dabfc, type: 2}
+    overrideMaterialPassIndex: 2
+    overrideDepthState: 0
+    depthCompareFunction: 4
+    enableWrite: 1
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 0
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60

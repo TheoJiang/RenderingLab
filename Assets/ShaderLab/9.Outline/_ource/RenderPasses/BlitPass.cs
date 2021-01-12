@@ -55,27 +55,28 @@ class BlitPass : ScriptableRenderPass {
 
         CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
 
-        var ca = renderingData.cameraData.camera;
-        // var ca = GameObject.Find("RTCamera");
-        if (ca.name.Contains("RTCamera"))
-        {
-            
-            var came = ca.GetComponent<Camera>();
-            came.enabled = true;
-            
-            if (came)
-            {
-                var currentRT = RenderTexture.active;
-                RenderTexture.active = came.targetTexture;
-                
-                var ppcameraRT = came.targetTexture;
-                // blitMaterial.SetTexture("_MaskTexture", RenderTexture.active);
-                cmd.SetGlobalTexture("_MaskTexture", RenderTexture.active);
-                RenderTexture.active = currentRT;
-            }
-
-            came.enabled = false;
-        }
+        // var ca = renderingData.cameraData.camera;
+        // // var ca = GameObject.Find("RTCamera");
+        // if (ca.name.Contains("RTCamera"))
+        // {
+        //     
+        //     var came = ca.GetComponent<Camera>();
+        //     came.enabled = true;
+        //     
+        //     if (came)
+        //     {
+        //         // var pixelRect = came.pixelRect;
+        //         // came.targetTexture.width = (int)pixelRect.width;
+        //         // came.targetTexture.height = (int)pixelRect.height;
+        //         //
+        //         var currentRT = RenderTexture.active;
+        //         RenderTexture.active = came.targetTexture;
+        //         cmd.SetGlobalTexture("_MaskTexture", RenderTexture.active);
+        //         RenderTexture.active = currentRT;
+        //     }
+        //
+        //     // came.enabled = false;
+        // }
         
         RenderTextureDescriptor opaqueDesc = renderingData.cameraData.cameraTargetDescriptor;
         opaqueDesc.depthBufferBits = 0;

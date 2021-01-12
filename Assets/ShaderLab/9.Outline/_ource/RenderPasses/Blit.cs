@@ -33,6 +33,10 @@ public class Blit : ScriptableRendererFeature {
 
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
+        if (renderingData.cameraData.camera.name.Contains("RTCamera"))
+        {
+            return;
+        }
         // renderingData.cameraData.camera.Render();
         // var feature = renderer.rendererFeatures[3] as Blit;
         // var ca = GameObject.Find("RTCamera");

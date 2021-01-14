@@ -28,39 +28,17 @@ public class Blit : ScriptableRendererFeature {
         var passIndex = settings.blitMaterial != null ? settings.blitMaterial.passCount - 1 : 1;
         settings.blitMaterialPassIndex = Mathf.Clamp(settings.blitMaterialPassIndex, -1, passIndex);
         blitPass = new BlitPass(settings.Event, settings.blitMaterial, settings.blitMaterialPassIndex, name);
-        m_RenderTextureHandle.Init(settings.textureId);
+        m_RenderTextureHandle.Init("_BlitPassTexture");
     }
 
+    // 使用Blit的一定是主相机
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
-        if (renderingData.cameraData.camera.name.Contains("RTCamera"))
+        if (!renderingData.cameraData.camera.name.Contains("Main Camera"))
         {
             return;
         }
-        // renderingData.cameraData.camera.Render();
-        // var feature = renderer.rendererFeatures[3] as Blit;
-        // var ca = GameObject.Find("RTCamera");
-        // if (ca)
-        // {
-        //     var came = ca.GetComponent<Camera>();
-        //     came.enabled = true;
-        //     if (came)
-        //     {
-        //         var ppcameraRT = came.targetTexture;
-        //         blitPass.blitMaterial.SetTexture("_MaskTexture", ppcameraRT);
-        //         
-        //     }
-        //     came.Render();
-        //     came.enabled = false;
-        //
-        // }
-        
-        // UniversalRenderPipeline.asset.GetRenderer(0);
-        // Camera camera = renderingData.cameraData.camera;
-        // if (!camera.name.Contains("RTCamera"))
-        // {
-        //     return;
-        // }
+
         var src = renderer.cameraColorTarget;
         var dest = (settings.destination == Target.Color) ? RenderTargetHandle.CameraTarget : m_RenderTextureHandle;
 

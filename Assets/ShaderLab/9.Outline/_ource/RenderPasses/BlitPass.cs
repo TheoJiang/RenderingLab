@@ -85,7 +85,10 @@ class BlitPass : ScriptableRenderPass {
         // Can't read and write to same color target, create a temp render target to blit. 
         if (destination == RenderTargetHandle.CameraTarget) {
             cmd.GetTemporaryRT(m_TemporaryColorTexture.id, opaqueDesc, filterMode);
+            // 将Source(当前Buffer） Blit至 tempColorTexture， 过程中经材质球对应处理
+            // Shader.PropertyToID("_CameraColorTexture") == source.m_NameID == 1142
             Blit(cmd, source, m_TemporaryColorTexture.Identifier(), blitMaterial, blitShaderPassIndex);
+            // 将处理后的rt传回
             Blit(cmd, m_TemporaryColorTexture.Identifier(), source);
         }
         else {

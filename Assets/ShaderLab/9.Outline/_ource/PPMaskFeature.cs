@@ -84,7 +84,6 @@ using UnityEngine.Scripting.APIUpdating;
             {
                 ppCamera = rtcameraObj.GetComponent<Camera>();
                 var rt = RenderTexture.GetTemporary(ppCamera.pixelWidth, ppCamera.pixelHeight, 24);
-                rt.useDynamicScale = true;
                 ppCamera.targetTexture = rt;
             }
         }

@@ -200,10 +200,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244a3621eac2d094ab3835798ff0b62f, type: 3}
   m_Name: NewPPMaskFeature
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   settings:
     passTag: CustomMaskFeature
-    Event: 300
+    Event: 500
     filterSettings:
       RenderQueueType: 0
       LayerMask:
@@ -213,7 +213,7 @@ MonoBehaviour:
       - UniversalForward
     overrideMaterial: {fileID: 2100000, guid: 4e8cff4d034445a4c8ad3fab5c9dabfc, type: 2}
     overrideMaterialPassIndex: 2
-    overrideDepthState: 0
+    overrideDepthState: 1
     depthCompareFunction: 4
     enableWrite: 1
     stencilSettings:
